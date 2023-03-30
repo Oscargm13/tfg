@@ -13,11 +13,12 @@
 #logo{
     margin-top: 15px;
     margin-left: 10px;
-    width: 20%;
+    width: 15%;
     color: red;
     font-size: 2.2em;
     font-family: 'Rubik Mono One', sans-serif;
     margin-left: 20px;
+    background-color: white;
 }
 #buscar{
 width: 50%;
@@ -26,34 +27,37 @@ margin-top: 20px;
 color: red;
 }
 #buscar input {
-    width: 60%;
+    width: 40%;
     height: 40px;
     border-radius: 70px;
     font-size: 1.5em;
     margin: 0 auto;
 }
 #login{
-    width: 25%;
+    width: 40%;
     height: 40px;
     align-items: end;
     margin-top: 13px;
+    float: right;
+    margin-right: 10px;
+    background-color: white;
 }
 #login a, #login p{
     font-family: 'Rubik Mono One', sans-serif;
     float: right;
-    font-size: 1.5em;
+    font-size: 1em;
     margin: 15px auto;
     margin-left: 7px;
     text-decoration: none;
     color: red;
 }
 #login a:hover{
-    font-size: 2.5em;
+    color: white;
 }
 header{
-    background-color: transparent;
+    background-color: black;
     width: 100%;
-    height: 50px;
+    height: 80px;
     margin: 0 auto;
 }
 body{
