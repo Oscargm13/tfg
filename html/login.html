@@ -8,14 +8,25 @@
     <link rel="stylesheet" href="../estilos/estilosLogin.css">
 </head>
 <body>
-    <h1>iniciar sesion</h1>
-    <form action="">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre">
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" name="apellidos">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email">
+    <h1>Formulario de registro</h1>
+
+    <div id="container">
+        <form action="">
+            <label for="usuario" id="lblUsu">Nombre de usuario</label>
+            <input type="text" id="id" name="id" class="input" required>
+
+            <label for="mail">Cuenta de correo</label>
+            <input type="text" name="mail" id="mail" class="input" required>
+
+            <label for="password">Contraseña del usuario</label>
+            <input type="password" name="password" id="password" class="input" required>
+
+            <label for="pass">Repite la contraseña</label>
+            <input type="password" name="pass" id="pass" class="input" required>
+
+            <input type="checkbox" id="guardar">Guardar inicio de sesion
+        
+            <button type="submit" id="btn">Siguiente</button><p id="error"></p>
     </form>
 </body>
 </html>
