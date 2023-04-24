@@ -1,9 +1,10 @@
 body {
     background: #d15555;
+    background-color: #ccc;
 }
 #container {
     border-radius: 10px;
-    box-shadow: 0 0 15px #ddd;
+    box-shadow: 0 0 15px black;
     background: #fff;
     width: 450px;
     margin: 0 auto;
@@ -20,6 +21,10 @@ body {
       flex-direction: column;
       width: 400px;
       margin: 0 auto;
+    }
+    .inicio{
+      box-sizing: border-box;
+      margin-bottom: 20px;
     }
     
     label {
@@ -54,8 +59,17 @@ body {
     button:hover {
       background-color: #eb1818;
     }
-    #guardar {
-        width: 30%;
-        margin: 0;
-        box-sizing: border-box;
+    #guardar{
+      width: 25px;
+      height: 17px;
+      /* Doble-tamaño Checkboxes */
+      -ms-transform: scale(1.5); /* IE */
+      -moz-transform: scale(1.5); /* FF */
+      -webkit-transform: scale(1.5); /* Safari y Chrome */
+      -o-transform: scale(1.5); /* Opera */
+      padding: 10px;
+      border: #d15555 1px solid;
+    }
+    .inicio label{
+      font-weight: 300;
     }

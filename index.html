@@ -1,25 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autorent</title>
-    <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
+	<title>Autorent</title>
+	<link rel="stylesheet" href="estilos/estilos.css">
 </head>
 <body>
-    <header>
-        <div class="head" id="logo">Autorent</div>
-        <div class="head" id="login">
-            <a href="html/login.html">login</a>
-            <p>|</p>
-            <a href="html/nosotros.html">nosotros</a>
-            <p>|</p>
-            <a href="html/preguntasFrecuentes.html">preguntas frecuentes</a>
-        </div>
-    </header>
+	<header>
+		<h1>Autorent</h1>
+		<nav>
+			<a href="html/login.html">Login</a>
+			<a href="html/nosotros.html">Nosotros</a>
+			<a href="html/preguntasFrecuentes.html">Preguntas Frecuentes</a>
+		</nav>
+	</header>
+	<nav class="barra-navegacion">
+		<a href="#">Inicio</a>
+		<a href="PHP/vehiculos.php">Productos</a>
+		<a href="#">Servicios</a>
+		<a href="#">Contacto</a>
+        <a href="#">ejemplo</a>
+	</nav>
+	<main>
+		<div>
+			<div class="carrusel">
+                <div class="contenedor-imagenes">
+                  <img src="imagenes/coche_blancoNegro.png">
+                </div>
+            </div>
+			<div class="secciones">
+				<div class="seccion">
+                    <img src="imagenes/moto.jpeg" alt="">
+                    <p>Motos</p>
+                </div>
+				<div class="seccion">
+                    <img src="imagenes/deportivo.jpeg" alt="">
+                    <p>Deportivos</p>
+                </div>
+				<div class="seccion">
+                    <img src="imagenes/coche.jpeg" alt="">
+                    <p>Coches</p>
+                </div>
+                <div class="seccion">
+                    <img src="imagenes/camioneta.jpeg" alt="">
+                    <p>Furgonetas</p>
+                </div>
+                <div class="seccion">
+                    <img src="imagenes/patinete.png" alt="">
+                    <p>Patinetes</p>
+                </div>
+                <div class="seccion">
+                    <img src="imagenes/motoAgua.jpeg" alt="">
+                    <p>Motos de agua</p>
+                </div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<nav>
+			<a href="#">Red social 1</a>
+			<a href="#">Red social 2</a>
+			<a href="#">Red social 3</a>
+		</nav>
+	</footer>
 </body>
 </html>
