@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../estilos/estilosLogin.css">
+    <script src="../js/login.js"></script>
 </head>
 <body>
     
     <h1>Formulario de registro</h1>
 
     <div id="container">
-        <form action="">
-            <label for="usuario" id="lblUsu">Nombre de usuario</label>
-            <input type="text" id="id" name="id" class="input" required>
+        <form action="../PHP/formulario.php" method="post">
+            <label for="usuario" id="lblUsu">Nombre y apellidos</label>
+            <input type="text" id="id" name="id" class="input" value="Oscar" required>
 
             <label for="mail">Cuenta de correo</label>
-            <input type="text" name="mail" id="mail" class="input" required>
+            <input type="text" name="mail" id="mail" class="input" value="oscar@gmail.com" required>
+
+            <label for="tlf">Numero de telefono</label>
+            <input type="text" name="tlf" id="tlf" class="input" value="111111111" required>
+
+            <label for="ciudad">Ciudad de residencia</label>
+            <input type="text" name="ciudad" id="ciudad" class="input" value="Madrid" required>
 
             <label for="password">Contraseña del usuario</label>
             <input type="password" name="password" id="password" class="input" required>
@@ -27,7 +34,7 @@
 
             <div class="inicio"><label for="guardar"><input type="checkbox" id="guardar">Guardar inicio de sesion</label></div>
              
-        
+            <span id="error" style="color: red; margin: 10px;"></span>
             <button type="submit" id="btn">Siguiente</button><p id="error"></p>
     </form>
 </body>

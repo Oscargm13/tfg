@@ -152,8 +152,9 @@ header {
     justify-content: flex-end;
     width: 90%;
     margin: auto;
+    height: 80px;
   }
-  
+
   footer nav a {
     color: #fff;
     text-decoration: none;

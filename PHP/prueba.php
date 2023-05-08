@@ -7,11 +7,18 @@
     <title>Document</title>
     <link rel="stylesheet" href="../estilos/estilosLogin.css">
     <link rel="stylesheet" href="../estilos/estilosVehiculos.css">
-    <script src="../js/catalogo.js"></script>
+    <style>
+        #container {
+            display: block;
+        }
+        #contenedor {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="container">
-        <form method="post" id="formulario-filtros">
+        <form method="post" id="formulario">
             <label for="">Filtros</label>
             <select name="ciudad" id="ciudad">
                 <option value="%">Todas las ciudades</option>
@@ -35,27 +42,11 @@
 
             <div class="inicio"><label for="guardar"><input type="checkbox" id="guardar">Mostrar solo los vehiculos disponibles</label></div>
 
-            <button type="submit" name="enviar" id="aplicar" onclick="aplicarFiltros(event)" >Aplicar filtros</button>
+            <button type="submit" name="enviar" id="aplicar">Aplicar filtros</button>
         </form>
     </div>
-
-    <form id="mi-formulario">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre">
-    <br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email">
-    <br>
-    <label for="recogida">Fecha de recogida:</label>
-    <input type="date">
-    <br>
-    <label for="devolucion">Fecha de devolución:</label>
-    <input type="date">
-    <br>
-    <input type="submit" value="Enviar">
-  </form>
     
-   <?php
+    <?php
     if(isset($_POST["enviar"])){
         //Guardamos valor del select
         $ciudad = $_POST['ciudad'];
@@ -80,7 +71,7 @@
             die("La consulta falló: ".mysqli_error($conexion));
         }
         echo "<div id='contenedor'>";
-        echo "<h1 class='titulo'>Catalogo de vehículos</h1>";
+        echo "<h1 class='titulo'>Catalogo de vehículos</h1><a id='modificar'>Modificar filtros</a>";
 
         while ($fila = mysqli_fetch_array($consulta)) {
             echo "<div class='caja'>";
@@ -88,17 +79,35 @@
             echo "<div class='texto'>";
             echo "<p>Parking: " . $fila["name_parking"] . "</p><p>Tipo de vehiculo: " . $fila["nombre_tipo"] . "</p>";
             echo "<p>Disponibilidad: " . $fila["estado"] . "</p>";
-            echo "<button id='alquilar'>Alquilar vehiculo</button>";
             echo "</div>";
             echo "</div>";
             //echo "<tr><td>" . $fila["brand"] ." ". $fila["model"] . "</td><td>" . $fila["name_parking"] . "</td><td>" . $fila["nombre_tipo"] ."</td><td>". $fila["estado"] ."</td><tr>";
         }
 
         echo "</div>";
-        echo "<script src='../js/catalogo.js'></script>";
         mysqli_close($conexion);
     }
-   
 ?>
+<script>
+    const form = document.getElementById('formulario');
+    const container = document.getElementById('container');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // evita que el formulario se envíe
+        const formData = new FormData(this); // obtiene los datos del formulario
+        fetch('prueba.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            container.style.display = 'none'; // oculta el contenedor
+            console.log(data); // muestra la respuesta del servidor en la consola
+        })
+        .catch(error => console.error(error));
+    });
+</script>
+
+
 </body>
 </html>

@@ -16,6 +16,8 @@ CREATE TABLE Vehicles (
     brand VARCHAR(50),
     license_plate VARCHAR(10),
     nombre_tipo VARCHAR(50),
+    id_modelo INT,
+    FOREIGN KEY (id_modelo) REFERENCES Modelos(id_modelo)
 );
 CREATE TABLE Distribucion (
     id_parking INT,
@@ -45,6 +47,38 @@ CREATE TABLE Customers (
     phone_number VARCHAR(15),
     domicilio VARCHAR(50)
 );
+CREATE TABLE Modelos (
+    id_modelo INT PRIMARY KEY,
+    model VARCHAR(50),
+    brand VARCHAR(50),
+    imagen VARCHAR(50)
+);
+INSERT INTO Modelos (id_modelo, model, brand, imagen) VALUES
+(1, 'C3', 'Citroen', 'c3.png'),
+(2, 'Golf', 'Volkswagen', 'golf.png'),
+(3, 'Clio', 'Renault', 'clio.png'),
+(4, 'Touareg', 'Volkswagen', 'touareg.png'),
+(5, 'X5', 'BMW', 'x5.png'),
+(6, 'Qashqai', 'Nissan', 'qashqai.png'),
+(7, 'Monster', 'Ducati', 'monster.png'),
+(8, 'R15', 'Yamaha', 'r15.png'),
+(9, 'CBR 600', 'Honda', 'cbr600.png'),
+(10, 'Transit', 'Ford', 'transit.png'),
+(11, 'Vito', 'Mercedes-Benz', 'vito.png'),
+(12, 'Berlingo', 'Citroen', 'berlingo.png'),
+(13, 'C4 Picasso', 'Citroen', 'picasso.png'),
+(14, '911', 'Porsche', '911.png'),
+(15, 'Civic', 'Honda', 'civic.png'),
+(16, 'Fiesta', 'Ford', 'fiesta.png'),
+(17, 'Outlander', 'Mitsubishi', 'outlander.png'),
+(18, 'Harley Davidson', 'Harley Davidson', 'harley.png'),
+(19, 'Sprinter', 'Mercedes-Benz', 'sprinter.png'),
+(20, 'C5', 'Citroen', 'c5.png'),
+(21, 'Astra', 'Opel', 'astra.png'),
+(22, 'Panda', 'Fiat', 'panda.png'),
+(23, 'Expert', 'Peugeot', 'expert.png'),
+(24, 'Corsa', 'Opel', 'corsa.png'),
+(25, 'Range Rover', 'Land Rover', 'rangerover.png');
 -- Insertar datos clientes
 INSERT INTO `Customers`(1,'Ryan García','RyanBoxer@gmail.com','123456789','Madrid','Gervonta28');
 INSERT INTO `Customers`(2,'Armando Torres','Armandito777@gmail.com','637456378','Madrid','Klkbb09');
@@ -172,3 +206,29 @@ VALUES
     (6, 45),
     (6, 46),
     (6, 47);
+ 
+UPDATE `Vehicles` SET `id_modelo`=1 WHERE model = 'C3';
+UPDATE `Vehicles` SET `id_modelo`=2 WHERE model = 'Golf';
+UPDATE `Vehicles` SET `id_modelo`=3 WHERE model = 'Clio';
+UPDATE `Vehicles` SET `id_modelo`=4 WHERE model = 'Touareg';
+UPDATE `Vehicles` SET `id_modelo`=5 WHERE model = 'X5';
+UPDATE `Vehicles` SET `id_modelo`=6 WHERE model = 'Qashqai';
+UPDATE `Vehicles` SET `id_modelo`=7 WHERE model = 'Monster';
+UPDATE `Vehicles` SET `id_modelo`=8 WHERE model = 'R15';
+UPDATE `Vehicles` SET `id_modelo`=9 WHERE model = 'CBR 600';
+UPDATE `Vehicles` SET `id_modelo`=10 WHERE model = 'Transit';
+UPDATE `Vehicles` SET `id_modelo`=11 WHERE model = 'Vito';
+UPDATE `Vehicles` SET `id_modelo`=12 WHERE model = 'Berligo';
+UPDATE `Vehicles` SET `id_modelo`=13 WHERE model = 'C4 Picasso';
+UPDATE `Vehicles` SET `id_modelo`=14 WHERE model = '911';
+UPDATE `Vehicles` SET `id_modelo`=15 WHERE model = 'Civic';
+UPDATE `Vehicles` SET `id_modelo`=16 WHERE model = 'Fiesta';
+UPDATE `Vehicles` SET `id_modelo`=17 WHERE model = 'Outlander';
+UPDATE `Vehicles` SET `id_modelo`=18 WHERE model = 'Harley Davidson';
+UPDATE `Vehicles` SET `id_modelo`=19 WHERE model = 'Sprinter';
+UPDATE `Vehicles` SET `id_modelo`=20 WHERE model = 'C5';
+UPDATE `Vehicles` SET `id_modelo`=21 WHERE model = 'Astra';
+UPDATE `Vehicles` SET `id_modelo`=22 WHERE model = 'Panda';
+UPDATE `Vehicles` SET `id_modelo`=23 WHERE model = 'Expert';
+UPDATE `Vehicles` SET `id_modelo`=24 WHERE model = 'Corsa';
+UPDATE `Vehicles` SET `id_modelo`=25 WHERE model = 'Ranger Rover';
